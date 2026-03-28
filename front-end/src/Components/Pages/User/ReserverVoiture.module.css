@@ -1,0 +1,417 @@
+/* ReserverVoiture.module.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-blue: #1976d2;
+  --primary-blue-light: #2196f3;
+  --primary-blue-dark: #0b5e9e;
+  --secondary-blue: #64b5f6;
+  --text-dark: #1a2c3e;
+  --text-light: #546e7a;
+  --background-light: #f5f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --green: #4caf50;
+  --red: #f44336;
+  --orange: #ff9800;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  min-height: calc(100vh - 80px);
+  background: var(--background-light);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== COLONNES ===== */
+.left,
+.right {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* ===== CARTES ===== */
+.card {
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  padding: 30px;
+  transition: var(--transition);
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== FORMULAIRE ===== */
+.inputGroup {
+  margin-bottom: 25px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  background: var(--gray-50);
+}
+
+.inputGroup input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  outline: none;
+  background: var(--white);
+}
+
+/* ===== PRIX ===== */
+.priceBreakdown {
+  background: linear-gradient(135deg, var(--gray-50), var(--white));
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid var(--gray-200);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.totalLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.totalAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.priceDetail {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0;
+  text-align: right;
+}
+
+/* ===== BOUTONS ===== */
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.button,
+.backButton {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.button {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  color: var(--white);
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.backButton {
+  background: var(--gray-200);
+  color: var(--text-dark);
+}
+
+.backButton:hover {
+  background: var(--gray-300);
+  transform: translateY(-1px);
+}
+
+/* ===== MESSAGES ===== */
+.warningMessage {
+  background: #fff3e0;
+  border-left: 4px solid var(--orange);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: var(--orange);
+  margin: 15px 0;
+}
+
+/* ===== TOAST NOTIFICATIONS ===== */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 2000;
+  animation: slideInRight 0.3s ease;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast.success {
+  background: var(--green);
+}
+
+.toast.error {
+  background: var(--red);
+}
+
+.toastIcon {
+  font-size: 1.1rem;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===== IMAGE ===== */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 25px;
+  background: var(--gray-100);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.imagePlaceholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.02);
+}
+
+/* ===== INFOS VOITURE ===== */
+.voitureInfo {
+  margin-top: 20px;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.infoValue {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* ===== TITRES ===== */
+.card h2,
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-blue-dark);
+  font-size: 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+/* ===== ÉTATS DE CHARGEMENT ===== */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingContainer p {
+  color: var(--text-light);
+}
+
+/* ===== ÉTAT ERREUR ===== */
+.errorContainer {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--white);
+  border-radius: 24px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-md);
+}
+
+.errorIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.errorContainer h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.errorContainer p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .button, .backButton {
+    width: 100%;
+  }
+
+  .imageContainer {
+    height: 200px;
+  }
+
+  .card h2, .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .totalAmount {
+    font-size: 1.2rem;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .infoLabel {
+    width: auto;
+  }
+
+  .toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+}

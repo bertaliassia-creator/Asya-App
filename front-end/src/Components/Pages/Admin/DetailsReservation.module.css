@@ -1,0 +1,441 @@
+/* DetailsReservation.module.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-blue: #1976d2;
+  --primary-blue-light: #2196f3;
+  --primary-blue-dark: #0b5e9e;
+  --secondary-blue: #64b5f6;
+  --text-dark: #1a2c3e;
+  --text-light: #546e7a;
+  --background-light: #f5f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --green: #4caf50;
+  --orange: #ff9800;
+  --red: #f44336;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  min-height: 100vh;
+  background: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARD ===== */
+.card {
+  max-width: 800px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 32px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  padding: 24px 32px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-block;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sectionIcon {
+  font-size: 1.2rem;
+}
+
+.sectionTitle h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ===== INFORMATIONS CLIENT ===== */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--gray-50);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+/* ===== INFORMATIONS VOITURE ===== */
+.carInfo {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.carImage {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.carImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carDetails {
+  flex: 1;
+}
+
+.carTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-blue-dark);
+  margin: 0 0 8px 0;
+}
+
+.dateRange {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 8px 0;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 8px;
+}
+
+/* ===== STATUT BADGES ===== */
+.statusPending {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #fff3e0;
+  color: var(--orange);
+}
+
+.statusConfirmed {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e8f5e9;
+  color: var(--green);
+}
+
+.statusCancelled {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #ffebee;
+  color: var(--red);
+}
+
+/* ===== MODIFICATION STATUT ===== */
+.statusUpdate {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.select {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: var(--gray-50);
+  transition: var(--transition);
+}
+
+.select:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.updateButton {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.updateButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.updateButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== BOUTONS D'ACTION ===== */
+.actionButtons {
+  padding: 24px 32px;
+  background: var(--gray-50);
+  text-align: center;
+}
+
+.backButton {
+  padding: 10px 24px;
+  background: var(--gray-200);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.backButton:hover {
+  background: var(--gray-300);
+  transform: translateY(-1px);
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  z-index: 2000;
+  animation: slideInRight 0.3s ease;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 350px;
+}
+
+.toastSuccess {
+  background: var(--green);
+}
+
+.toastError {
+  background: var(--red);
+}
+
+.toastInfo {
+  background: var(--primary-blue);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ===== ÉTATS DE CHARGEMENT ET ERREUR ===== */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingContainer p {
+  color: var(--text-light);
+}
+
+.errorState {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--white);
+  border-radius: 24px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-md);
+}
+
+.errorIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.errorState h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.errorState p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .header {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .carInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carImage {
+    width: 100%;
+    height: 160px;
+  }
+
+  .statusUpdate {
+    flex-direction: column;
+  }
+
+  .select, .updateButton {
+    width: 100%;
+  }
+
+  .toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    text-align: center;
+    justify-content: center;
+  }
+}

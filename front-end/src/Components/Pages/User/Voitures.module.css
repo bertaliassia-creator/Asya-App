@@ -1,0 +1,496 @@
+/* Voitures.module.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-blue: #1976d2;
+  --primary-blue-light: #2196f3;
+  --primary-blue-dark: #0b5e9e;
+  --secondary-blue: #64b5f6;
+  --text-dark: #1a2c3e;
+  --text-light: #546e7a;
+  --background-light: #f5f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --red: #f44336;
+  --green: #4caf50;
+  --orange: #ff9800;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.pageContainer {
+  min-height: 100vh;
+  background: var(--background-light);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.6s ease;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CONTAINER CONTENU ===== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===== SECTION RECHERCHE & FILTRES ===== */
+.searchSection {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 15px;
+  background: var(--white);
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  background: var(--gray-50);
+}
+
+.searchInput:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+  outline: none;
+  background: var(--white);
+}
+
+.filterToggle {
+  padding: 12px 20px;
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filterToggle:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* Panneau des filtres */
+.filtersPanel {
+  border-top: 1px solid var(--gray-200);
+  padding: 20px;
+  background: var(--gray-50);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: end;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.filterSelect {
+  padding: 10px 12px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 12px;
+  background: var(--white);
+  font-size: 0.9rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.filterSelect:focus {
+  border-color: var(--primary-blue);
+  outline: none;
+}
+
+.clearFiltersBtn {
+  padding: 10px 16px;
+  background: var(--gray-200);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  color: var(--text-dark);
+  height: fit-content;
+}
+
+.clearFiltersBtn:hover {
+  background: var(--gray-300);
+}
+
+/* ===== HEADER AVEC COMPTEUR ===== */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+/* ===== GRILLE DES VOITURES ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Carte voiture */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardImageWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: var(--gray-100);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* Badges */
+.badge,
+.promoBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--white);
+  z-index: 1;
+}
+
+.badge {
+  background: var(--red);
+}
+
+.promoBadge {
+  background: var(--orange);
+}
+
+.cardContent {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.carTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 12px 0;
+}
+
+.carDetails {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.detailItem {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  background: var(--gray-50);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.priceContainer {
+  margin: 12px 0 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.priceUnit {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  color: var(--white);
+  text-align: center;
+  margin-top: auto;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btnDisabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ===== ÉTATS DE CHARGEMENT ET ERREUR ===== */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loadingContainer p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.errorMessage {
+  color: var(--red);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.retryBtn,
+.primaryBtn {
+  padding: 10px 24px;
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.retryBtn:hover,
+.primaryBtn:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== ÉTAT VIDE ===== */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.emptyState h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.emptyState p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterToggle {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filtersPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardImageWrapper {
+    height: 180px;
+  }
+
+  .carTitle {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+}

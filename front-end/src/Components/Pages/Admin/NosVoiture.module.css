@@ -1,0 +1,218 @@
+/* NosVoiture.module.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-blue: #1976d2;
+  --primary-blue-light: #2196f3;
+  --primary-blue-dark: #0b5e9e;
+  --secondary-blue: #64b5f6;
+  --text-dark: #1a2c3e;
+  --text-light: #546e7a;
+  --background-light: #f5f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --green: #4caf50;
+  --orange: #ff9800;
+  --red: #f44336;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.nosVoituresContainer {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--background-light);
+  min-height: calc(100vh - 80px);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TITRE ===== */
+.nosVoituresContainer h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue-dark);
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.nosVoituresContainer h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  border-radius: 3px;
+}
+
+/* ===== GRILLE ===== */
+.nosVoituresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* ===== CARTE ===== */
+.nosVoituresCard {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.nosVoituresCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* IMAGE */
+.nosVoituresCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nosVoituresCard:hover img {
+  transform: scale(1.02);
+}
+
+/* CONTENU */
+.nosVoituresCard h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 15px 20px 8px;
+}
+
+.nosVoituresCard p {
+  margin: 4px 20px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.nosVoituresCard p:first-of-type {
+  margin-top: 8px;
+}
+
+/* ===== BOUTONS ===== */
+.buttonsWrapper {
+  display: flex;
+  gap: 10px;
+  margin: 15px 20px 20px;
+  padding-top: 5px;
+}
+
+.modifyBtn,
+.deleteBtn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.modifyBtn {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  color: var(--white);
+}
+
+.modifyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.deleteBtn {
+  background: linear-gradient(135deg, var(--red), #d32f2f);
+  color: var(--white);
+}
+
+.deleteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nosVoituresContainer {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .nosVoituresContainer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .nosVoituresGrid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .nosVoituresCard h3 {
+    font-size: 1rem;
+    margin: 12px 15px 5px;
+  }
+
+  .nosVoituresCard p {
+    margin: 3px 15px;
+    font-size: 0.85rem;
+  }
+
+  .buttonsWrapper {
+    margin: 12px 15px 15px;
+    gap: 8px;
+  }
+
+  .modifyBtn,
+  .deleteBtn {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nosVoituresContainer {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .nosVoituresGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .nosVoituresCard img {
+    height: 180px;
+  }
+}

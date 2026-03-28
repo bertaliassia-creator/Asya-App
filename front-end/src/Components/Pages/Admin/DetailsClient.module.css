@@ -1,0 +1,318 @@
+/* DetailsClient.module.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-blue: #1976d2;
+  --primary-blue-light: #2196f3;
+  --primary-blue-dark: #0b5e9e;
+  --secondary-blue: #64b5f6;
+  --text-dark: #1a2c3e;
+  --text-light: #546e7a;
+  --background-light: #f5f9ff;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --red: #f44336;
+  --green: #4caf50;
+  --orange: #ff9800;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Container principal ===== */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--background-light);
+  min-height: 100vh;
+}
+
+/* ===== Titres ===== */
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 30px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary-blue);
+  display: inline-block;
+  color: var(--text-dark);
+}
+
+/* ===== Carte des informations client ===== */
+.clientCard {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: var(--transition);
+  animation: fadeInUp 0.5s ease;
+}
+
+.clientCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.clientCard h2 {
+  color: var(--primary-blue);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clientInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px;
+  background: var(--gray-50);
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.infoRow:hover {
+  background: var(--gray-100);
+}
+
+.infoLabel {
+  font-weight: 600;
+  min-width: 100px;
+  color: var(--primary-blue-dark);
+}
+
+.infoValue {
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+/* ===== Grille des réservations ===== */
+.reservationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.reservationCard {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: fadeInUp 0.5s ease;
+}
+
+.reservationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Image de la voiture */
+.carImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--primary-blue-light);
+  transition: transform 0.3s ease;
+}
+
+.reservationCard:hover .carImage {
+  transform: scale(1.02);
+}
+
+/* Contenu de la carte */
+.reservationContent {
+  padding: 20px;
+}
+
+.carTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-blue-dark);
+  margin: 0 0 15px 0;
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 12px;
+}
+
+.reservationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.reservationDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.9rem;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--gray-200);
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.detailValue {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Statut personnalisé */
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusConfirmed {
+  background: #e8f5e9;
+  color: var(--green);
+}
+
+.statusPending {
+  background: #fff3e0;
+  color: var(--orange);
+}
+
+.statusCancelled {
+  background: #ffebee;
+  color: var(--red);
+}
+
+.statusDefault {
+  background: var(--gray-200);
+  color: var(--text-light);
+}
+
+/* Prix */
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* ===== États vides et chargement ===== */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 15px;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  color: var(--gray-300);
+  margin-bottom: 15px;
+}
+
+.emptyState p {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 10px;
+  }
+
+  .clientInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .infoRow {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .infoLabel {
+    min-width: auto;
+  }
+
+  .reservationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reservationDetail {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .clientCard,
+  .reservationContent {
+    padding: 15px;
+  }
+
+  .carTitle {
+    font-size: 1rem;
+  }
+}

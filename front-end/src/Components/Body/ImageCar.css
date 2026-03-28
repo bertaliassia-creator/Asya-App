@@ -1,0 +1,63 @@
+.imageCar{
+text-align:center;
+padding:40px 20px;
+margin-top: 20px;
+}
+
+/* TITLE */
+
+#title{
+font-size:40px;
+font-weight:700;
+margin-bottom:30px;
+}
+
+/* FIRE TEXT EFFECT */
+
+.simple-title {
+  text-align: center;     
+  color: #222;            
+  font-style: italic ;
+}
+
+
+/* IMAGE */
+
+.img_container{
+display:flex;
+justify-content:center;
+}
+
+#img_cover{
+width:90%;
+max-width:900px;
+border-radius:10px;
+ animation: moveFromRight 2s ease-out forwards;
+opacity: 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+#title{
+font-size:28px;
+}
+
+#img_cover{
+width:100%;
+}
+
+}
+
+
+ @keyframes moveFromRight {
+        from {
+            transform: translateX(300px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }

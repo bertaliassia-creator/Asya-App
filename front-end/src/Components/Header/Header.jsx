@@ -19,9 +19,9 @@ function Header() {
         <nav className="nav">
           <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
             <li><Link to={"/"}><FontAwesomeIcon icon={faHouse} /> Accueil</Link></li>
-            <li><a href="#"><FontAwesomeIcon icon={faCar} /> Voitures</a></li>
-            <li><a href="#apropose"><FontAwesomeIcon icon={faInfoCircle} /> À propos</a></li>
-            <li><a href="#contact"><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+            <li><Link to={"/voiture"}><FontAwesomeIcon icon={faCar} /> Voitures</Link></li>
+            <li><a href="#apropose" onClick={() => navigate("/#apropose")}><FontAwesomeIcon icon={faInfoCircle} /> À propos</a></li>
+            <li><a href="#contact" onClick={() => navigate("/#contact")}><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
           </ul>
         </nav>
 

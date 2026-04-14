@@ -18,6 +18,7 @@ function DetailsReservation() {
     axios.post(`${API}/getReservationById.php`, { id })
       .then(res => {
         setData(res.data);
+        console.log(res.data)
         setStatut(res.data.statut);
         setLoading(false);
       })

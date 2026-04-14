@@ -28,7 +28,7 @@ function LogIn() {
         setSuccess(true);
         if (res.data.client.role === 'user') {
           localStorage.setItem('client', JSON.stringify(res.data.client));
-          navigate('/client');
+          navigate('/client/Voitures');
         } else {
           localStorage.setItem('admin', JSON.stringify(res.data.client));
           navigate('/admin/Profile');

@@ -341,13 +341,7 @@ function Clients() {
           Exporter CSV
         </button>
 
-        <button
-          onClick={() => navigate('/admin/ajouter-client')}
-          className={styles.addButton}
-        >
-          <FontAwesomeIcon icon={faPlus} />
-          Ajouter
-        </button>
+            
 
         {(searchTerm || filterRegion || filterVille) && (
           <button onClick={resetFilters} className={styles.resetButton}>

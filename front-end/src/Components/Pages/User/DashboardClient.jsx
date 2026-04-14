@@ -62,17 +62,6 @@ function DashboardClient() {
                 <span className="title">Mes Réservations</span>
               </NavLink>
             </li>
-            <li className="nav-item" data-tooltip="Statistiques">
-              <NavLink
-                to="/client/Statistiques"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              >
-                <span className="icon">
-                  <FontAwesomeIcon icon={faChartLine} />
-                </span>
-                <span className="title">Statistiques</span>
-              </NavLink>
-            </li>
             <li className="nav-item" data-tooltip="Profil">
               <NavLink
                 to="/client/Profile"

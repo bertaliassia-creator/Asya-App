@@ -1,9 +1,9 @@
 :root {
-  --bg-body: #121212;
-  --glass-bg: rgba(30, 30, 30, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --bg-body: #95a8f5;
+  --glass-bg: rgba(129, 165, 250, 0.6);
+  --glass-border: rgba(131, 157, 244, 0.1);
   --primary: #3b82f6;    /* Bleu vif */
-  --text-muted: #888;
+  --text-muted: #888888;
 }
 
 /* Container */

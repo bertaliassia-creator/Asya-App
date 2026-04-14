@@ -77,17 +77,7 @@ function DashBoard() {
                 <span className="title">Clients</span>
               </NavLink>
             </li>
-            <li className="nav-item" data-tooltip="Statistiques">
-              <NavLink
-                to="/admin/Statistiques"
-                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              >
-                <span className="icon">
-                  <FontAwesomeIcon icon={faChartLine} />
-                </span>
-                <span className="title">Statistiques</span>
-              </NavLink>
-            </li>
+            
             <li className="nav-item" data-tooltip="Profil">
               <NavLink
                 to="/admin/Profile"

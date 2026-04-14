@@ -25,6 +25,7 @@ import MesReservation from './Components/Pages/User/MesReservation';
 import ProfileC from './Components/Pages/User/ProfileC';
 import DetailsClient from './Components/Pages/Admin/DetailsClient';
 import DetailsReservation from './Components/Pages/Admin/DetailsReservation';
+import VoituresClient from './Voiture/VoituresClient';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/' element={<><Header/><Body/></>} />
         <Route path='/logIn' element={<><Header/><LogIn/></>} />
         <Route path='/Register' element={<><Header/><Register/></>} />
+         <Route path="/voiture" element={ <> <Header/><VoituresClient /></>} />
 
         <Route path='/client' element={
           <ProtectedRouteClient>
@@ -66,7 +68,8 @@ function App() {
           <Route path="modifier/:id" element={<ModifierVoiture />} />
           <Route path="modifierProfile/:id" element={<ModifierClient />} />
             <Route path="DetailsClient/:id" element={<DetailsClient />} />
-              <Route path="reservation/:id" element={<DetailsReservation />} />
+            <Route path="reservation/:id" element={<DetailsReservation />} />
+           
 
 
 
